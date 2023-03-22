@@ -1,0 +1,12 @@
+név: alkatrészek listázása
+
+előfeltétel: a felhasználó mint szakember van bejelentkezve
+
+lépések:
+	a felhasználó kiválasztja az alkatrészek listázása menüpontot
+	a program lekéri az adatbázisból az alkatrészeket, azok árát és darbszámát
+	a program megjeleníti a lekért adatokat és egy vissza gombot
+
+alternatív lépések:
+	a felhasználó a vissza gombra kattint:
+		a program visszadobja a felhasználót a funkció választó menübe

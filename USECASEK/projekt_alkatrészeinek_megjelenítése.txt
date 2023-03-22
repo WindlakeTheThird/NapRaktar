@@ -1,0 +1,14 @@
+név: projekthez tartozó alkatrészek listázása
+
+előfeltétel: a felhasználó mint raktáros van bejelentkezve
+
+lépések:
+	a felhasználó kiválasztja a projektek alkatrésze menüpontot
+	a program lekéri a még be nem fejezett projektek listáját a szerverről
+	a projekt ki listázza a lekért projekteket és megjeleníti a vissza gombot
+	a felhasználó kiválaszt egy projektet a listából,
+	a program lekéri az adott projekthez tartozó alkatrészeket és azok adatait
+	a program megjeleníti a lekért adatokat
+alternatív lépések:
+	a felhasználó a vissza gombra kattint:
+		a program visszadobja a felhasználót a funkció választó menübe

@@ -1,0 +1,20 @@
+név:belépés
+
+előfeltétel:van regisztrált felhasználó a rendszerben
+
+lépések:
+	felhasználó megadja a felhasználó nevet
+	felhasználó megadja a jelszót
+	rendszer titkossítja a jelszót
+	rendszer elküldi a felhasználónevet és a titkosított jelszót az adatbázisnak
+	az adatbázis ellenörzi, hogy van e ilyen felhasználó és jelszó kombináció a rendszerben
+	az adatbázis visszaküldi a programnak, hogy a felhasználó létezik e vagy sem
+
+alternatív lépések:
+	ha létezik a felhasználó: 
+					a felhasználót belépteti a rendszer
+	
+	ha nemlétezik a felhasználó: 	
+					a program téves felhasználó név vagy jelszó üzenetet dob
+					a program törli a jelszó mező tartalmát
+		

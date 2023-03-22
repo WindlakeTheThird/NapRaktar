@@ -1,0 +1,21 @@
+név: projekt létrehozása
+
+előfeltétel: a felhasználó mint szakember van bejelenzkezve
+
+lépések:
+	a felhasználó rákattint a projekt létrehozása gombra
+	a program betölti a szükséges beviteli mezőket
+	a felhasználó felviszi a szükséges adatokat a megfelelelő beviteli mezőkbe
+	a felhasználó rákattint a projekt felvétele gombra
+	a program elküldi az adatbázisnak a projekt adatait
+	az adatbázis eltárolja az adatokat
+	az adatbázis visszajelzést küld a programnak az adatok tárolásáról
+
+alternatív lépések:
+	ha sikerül eltárolni az adatokat:
+					az adatok eltárolásának sikerességét a program egy felugro ablakkal jelzi
+					a program visszadobja a felhasználót a funkció választó menüre
+	ha nem sikerűl eltárolni az adatokat:
+					a program egy felugró ablakban jelzi hogy az adatok tárolása sikertelen volt
+					a program kitörli a szövegmezők tartalmát
+					

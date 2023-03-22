@@ -1,0 +1,26 @@
+név: renelés módosítás
+
+előfeltétel: a felhasználó mint raktárvezető van bejelentkezve
+
+lépések:
+	a felhasználó kiválasztja a renelés módosítása menüpontot
+	a program lekéri az adatbázisból a reneléseket
+	a program megjeleníti a lekért adatokat, egy vissza gombot, egy lenyíló listát, ami a rendelés új állapotát tartalmazza, egy gombot a rendelés állapotának módosítására, és egy gombot a még le nem adott rendelések módosítására
+
+alternatív lépések:
+	a felhasználó a vissza gombra kattint:
+		a program visszadobja a felhasználót a funkció választó menübe
+	a felhasználó az állapot módosítás gombra kattint:
+		a program elküldi az adatbázisnak a projekt új állapotát
+		az adatbázis módosítja a rendelés állapotát és visszajelez a programnak
+		a program jelzi az állapot módosítás sikerét
+	a felhasználó a rendelés módosítása gombra kattint:
+		a program frissiti a rendelések listáját, hogy az csak a még le nem adott rendeléseket tartalmazza
+		a felhasználó kiválaszt egy rendelést
+		a program megjeleníti a rendelés paramétereit egy-egy beviteli mezőbe és egy módosít gombot
+		a felhasználó átírja a kívánt paramétereket
+		a program ellenörzi, hogy a bevitt adatok helyesek e
+		a program továbbítja az adatbázisnak a bevitt adatokat
+		az adatbázis módosítja a rendelést
+		az adatbázis visszajelzést küld a módosítás sikeréről
+		a program felugró ablakba jelzi a módosítás sikerességét

@@ -1,0 +1,12 @@
+név: hiányzó alkatrészek listázása
+
+előfeltétel: a felhasználó mint raktárvezető van bejelentkezve
+
+lépések:
+	a felhasználó kiválasztja a hiányzó alkatrések listázása menüpontot
+	a program lekéri az adatbázisból azokat az alkatrészeket aminek darabszáma 0
+	a program megjeleníti a lekért adatokat és egy vissza gombot
+
+alternatív lépések:
+	a felhasználó a vissza gombra kattint:
+		a program visszadobja a felhasználót a funkció választó menübe

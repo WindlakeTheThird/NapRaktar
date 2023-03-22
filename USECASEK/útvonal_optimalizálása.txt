@@ -1,0 +1,14 @@
+név: útvonal optimalizálása
+
+előfeltétel: a felhasználó mint raktáros van bejelentkezve
+
+lépések:
+	a felhasználó kiválasztja az útvonal optimalizálása menüpontot
+	a program lekéri az adatbázisból a még el nem kezdett projektek listáját, amihez meg van minden alkatrész.
+	a program megjeleníti a lekért adatokat és egy vissza gombot
+	a felhasználó kiválaszt egy projektet
+	a program visszaadja a projekthez szükséges alkatrészek beszerzésének optimális sorrendjét
+
+alternatív lépések:
+	a felhasználó a vissza gombra kattint:
+		a program visszadobja a felhasználót a funkció választó menübe

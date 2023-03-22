@@ -1,0 +1,16 @@
+név: projekt állapotának módosítása
+
+előfeltétel: a felhasználó mint raktáros vagy  szakember van bejelentkezve
+
+lépések:
+	a felhasználó kiválasztja a projekt állapotának módosítása menüpontot
+	a program ellenörzi a felhasználó jogosultsági körét
+	a program megjeleníti a projektek listáját és a lehetséges műveleteket
+	a felhasználó rákattint a módosítani kivánt projekt azonosítóját, majd rákattint a kívánt állapot gombjára
+	a program lezárja a program azonosítók listáját
+	a program elküldi az azonosított és az új állapotot az adatbázisnak
+	az adatbázis módosítja az azonosítóhoz tartozó állapotot az új állapotra
+	az adatbázis visszajelzést küld a programnak a művelet sikerességéről
+	a program felugró ablakkal jelzi a felhasználónak a művelet sikerességét
+	a program visszalépteti a felhasználót a funkció választó menüre
+

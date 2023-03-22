@@ -1,0 +1,8 @@
+név: kilépés
+
+előfeltétel: a programba be van lépve a felhasználó
+
+lépések:
+	a felhasználó rákattint a kilépés gombra
+	a program visszadobja a felhasználót a belépés ablakra
+	a program törli azoknak a változóknak az értékét, amiket a felhasználó az előzö munkamenetben használt

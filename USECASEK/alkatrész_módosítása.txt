@@ -1,0 +1,24 @@
+név: alkatrész módosítás
+
+előfeltétel: a felhasználó mint raktárvezető van bejelentkezve
+
+lépések:
+	a felhasználó kiválasztja az alkatrész módosítása menüpontot
+	a program lekéri az adatbázisból az alkatrészeket
+	a program megjeleníti a lekért adatokat és egy vissza gombot
+	a felhasználó kiválaszt egy alkatrészt
+	a program kilistázza az alkatrész tulajdonságait beviteli mezőkbe, és egy módosít gombot
+	a felhasználó átírja a kívánt paramétereket
+
+alternatív lépések:
+	a felhasználó a vissza gombra kattint:
+		a program visszadobja a felhasználót a funkció választó menübe
+	a felhasználó a módosít gombra kattint:
+		a program ellenörzi a beviteli mezők tartalmát
+			ha azok kitöltése helyes:
+				a program továbbítja az új adatokat az adatbázisnak
+				az adatbázis frissiti az adatokat
+				az adatbázis visszajelzést küld a frissités sikerességéről
+				a program felugró ablakban jelzi az adat módosítás sikerességét
+			ha azok kitöltése nem megfelelő:
+				a program felugró ablakban jelzi a hibát

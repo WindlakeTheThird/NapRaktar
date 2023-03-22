@@ -1,0 +1,21 @@
+név: rekeszadat módosítás
+
+előfeltétel: a felhasználó mint raktárvezető van bejelentkezve
+
+lépések:
+	a felhasználó kiválasztja a rekeszadat módosítás menüpontot
+	a program lekéri a rekeszadatokat az adatbázisból
+	a program kilistázza a lekért adatokat, és megjelenít egy vissza gombot
+	a felhasználó kiválaszt egy rekeszt
+	a program megjeleníti annak adatait beviteli mezőkben és egy módosít gombot
+	a felhasználó átírja a kívánt paramétereket
+
+alternatív lépések:
+	a felhasználó a vissza gombra kattint:
+		a program visszadobja a felhasználót a funkció választó menübe
+	a felhasználó a rekesz módosítása gombra kattint:
+		a program ellenörzi, hogy a bevitt adatok helyesek e
+		a program továbbítja az adatbázisnak a bevitt adatokat
+		az adatbázis módosítja a rendelést
+		az adatbázis visszajelzést küld a módosítás sikeréről
+		a program felugró ablakba jelzi a módosítás sikerességét	

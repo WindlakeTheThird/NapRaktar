@@ -1,0 +1,12 @@
+név: projektek listázása
+
+előfeltétel: a felhasználó be van lépve a programba
+
+lépések:
+	a felhasználó kiválasztja a projektek listázása menüpontot
+	a program lekéri az adatbázisból a projektek listáját
+	a program megjeleneíti a felhasználó számára a projektek listáját és egy vissza gombot
+
+alternatív lépések:
+	a felhasználó a vissza gombra kattint:
+		a program visszadobja a felhasználót a funkció választó menübe
