@@ -39,5 +39,10 @@ namespace Menu
         {
             return lbPartList.Items[index].ToString().Split('-')[0].Trim().ToString();
         }
+
+        private void lbPartList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

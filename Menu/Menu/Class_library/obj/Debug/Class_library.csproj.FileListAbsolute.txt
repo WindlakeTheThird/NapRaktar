@@ -1,6 +1,0 @@
-C:\Users\Böszörményi Zoltán\Desktop\Menu\Class_library\bin\Debug\Class_library.dll
-C:\Users\Böszörményi Zoltán\Desktop\Menu\Class_library\bin\Debug\Class_library.pdb
-C:\Users\Böszörményi Zoltán\Desktop\Menu\Class_library\obj\Debug\Class_library.csproj.AssemblyReference.cache
-C:\Users\Böszörményi Zoltán\Desktop\Menu\Class_library\obj\Debug\Class_library.csproj.CoreCompileInputs.cache
-C:\Users\Böszörményi Zoltán\Desktop\Menu\Class_library\obj\Debug\Class_library.dll
-C:\Users\Böszörményi Zoltán\Desktop\Menu\Class_library\obj\Debug\Class_library.pdb
