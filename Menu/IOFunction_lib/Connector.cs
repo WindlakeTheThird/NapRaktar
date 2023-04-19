@@ -188,5 +188,31 @@ namespace IOFunction_lib
             }
             return null;
         }
+
+        public static string ConnectToDatabase_add_to_box(string server, string port, string user, string password, string database, string query)
+        {                                                                                   //(passwd-admin)
+            string connectionString = $"datasource={server}; port={port}; username={user}; Password={password}; database={database};";
+
+            MySqlConnection connector;
+            connector = new MySqlConnection(connectionString);
+
+            MySqlCommand commandDatabase = new MySqlCommand(query, connector);
+            commandDatabase.CommandTimeout = 60;
+
+            MySqlDataReader reader;
+
+            try
+            {
+                connector.Open();
+                reader = commandDatabase.ExecuteReader();
+                connector.Close();
+                return "A felvitel sikeres volt";
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.StackTrace);
+            }
+            return null;
+        }
     }
 }
