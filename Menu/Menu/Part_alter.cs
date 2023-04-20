@@ -1,13 +1,6 @@
 ﻿using Class_library;
 using IOFunction_lib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Menu
@@ -37,11 +30,11 @@ namespace Menu
         }
         public void Listazas_UserControllal()
         {
-            
+
             partListUC1.Refresh();
             partListUC1.BringToFront();
         }
-        public void Alter_part(object sender,EventArgs e)
+        public void Alter_part(object sender, EventArgs e)
         {
             if (txtNewVal.Text.Trim().Length > 0)
             {
@@ -90,7 +83,7 @@ namespace Menu
                     }
                 }
             }
-            
+
         }
     }
 }

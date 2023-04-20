@@ -1,12 +1,5 @@
 ﻿using Class_library;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -25,7 +18,7 @@ namespace Menu
         }
         public void LogOut(object sender, EventArgs e)
         {
-            this.Close();        
+            this.Close();
         }
         public void Part_Alter_Open(object sender, EventArgs e)
         {
@@ -40,6 +33,13 @@ namespace Menu
             Part_add part_add = new Part_add();
             part_add.Show();
             part_add.FormClosed += sub_form_closeing;
+        }
+        public void AlkatreszRekeszhez(object sender, EventArgs e)
+        {
+            this.Hide();
+            AlkatreszRekeszhezAdasaForm part_add_to_basket = new AlkatreszRekeszhezAdasaForm();
+            part_add_to_basket.Show();
+            part_add_to_basket.FormClosed += sub_form_closeing;
         }
         public void sub_form_closeing(object sender, EventArgs e)
         {

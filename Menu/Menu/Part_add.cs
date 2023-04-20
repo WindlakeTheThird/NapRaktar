@@ -1,13 +1,6 @@
 ﻿using Class_library;
 using IOFunction_lib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Menu
@@ -25,19 +18,19 @@ namespace Menu
         }
         public void AddingPart(object sender, EventArgs e)
         {
-            if(txtNumber.Text.Trim().Length == 0 || txtPrice.Text.Trim().Length == 0 || txtType.Text.Trim().Length == 0)
+            if (txtNumber.Text.Trim().Length == 0 || txtPrice.Text.Trim().Length == 0 || txtType.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Minden mező kitöltése kötelező", "Hiba", MessageBoxButtons.OK);
             }
             else
             {
-                if(!int.TryParse(txtNumber.Text.Trim(), out _))
+                if (!int.TryParse(txtNumber.Text.Trim(), out _))
                 {
                     MessageBox.Show("A darabszámnak számnak kell lennie", "Hiba", MessageBoxButtons.OK);
                     txtNumber.Clear();
                     txtNumber.Focus();
                 }
-                else if(!int.TryParse(txtPrice.Text.Trim(), out _))
+                else if (!int.TryParse(txtPrice.Text.Trim(), out _))
                 {
                     MessageBox.Show("Az árnak számnak kell lennie", "Hiba", MessageBoxButtons.OK);
                     txtPrice.Clear();

@@ -1,24 +1,27 @@
+using Class_library;
+using IOFunction_lib;
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Menu
 {
     public partial class SzakemberArazas : UserControl
     {
-
+        Szakember worker= (Szakember)Login.worker;
         string cs = @"server=localhost;username=root;password=;database=napelem";
         public SzakemberArazas()
         {
             InitializeComponent();
         }
+        public void projektKoltseg_Date_modositas(int projekt_id)
+
+        {
+            string kivitelezesi_ido = (Math.Ceiling((double)dtpSetTime.Value.Subtract(DateTime.Now).TotalDays)).ToString();
+            int koltseg = Convert.ToInt32(txtPrice.Text);
+            string query = $" UPDATE projekt SET koltseg={koltseg},kivitelezesi_ido={kivitelezesi_ido.ToString()} where id={projekt_id}";
+
+            /*MySqlConnection con = new MySqlConnection(cs);
 
         public void projektKoltseg_Date_modositas(int szakember_id=1)
 
@@ -35,13 +38,23 @@ namespace Menu
             MySqlDataReader myReader;
 
             con.Open();
+            myReader = myCommand.ExecuteReader();
             myReader=myCommand.ExecuteReader();
             while (myReader.Read())
             {
 
             }
-            
-            con.Close();
+
+            con.Close();*/
+            Connector.ConnectToDatabase_read_rek_2("127.0.0.1", "3306", "root", "toor", "napelem", query);
+        }
+        public string ReturntxtVal()
+        {
+            return txtPrice.Text;
+        }
+        public DateTime ReturnePickedDate()
+        {
+            return dtpSetTime.Value;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -61,7 +74,7 @@ namespace Menu
 
         private void btnModosit_Click(object sender, EventArgs e)
         {
-            projektKoltseg_Date_modositas();
+            projektKoltseg_Date_modositas(worker.Id);
         }
     }
 }

@@ -1,16 +1,8 @@
-﻿using System;
+﻿using Class_library;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Class_library;
-using IOFunction_lib;
 
 namespace Menu
 {
@@ -40,7 +32,7 @@ namespace Menu
                         txtUser.Clear();
                         txtPw.Clear();
                     }
-                    if(user[2] =="3")
+                    if (user[2] == "3")
                     {
                         this.Hide();
                         worker = new Szakember(int.Parse(user[0]), user[1]);
@@ -60,7 +52,7 @@ namespace Menu
             {
                 MessageBox.Show("A felhasználónév és jelészó megadása kötelező", "Sikertelen belépés", MessageBoxButtons.OK);
             }
-        }        
+        }
     }
 }
 
