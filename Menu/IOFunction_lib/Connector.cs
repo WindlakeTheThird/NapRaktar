@@ -188,9 +188,6 @@ namespace IOFunction_lib
             }
             return null;
         }
-<<<<<<< Updated upstream
-=======
-
         public static List<Project> ConnectToDatabase_list_projects(string server, string port, string user, string password, string database, int szak_id)
         {
             string connectionString = $"datasource={server}; port={port}; username={user}; Password={password}; database={database};";
@@ -354,6 +351,19 @@ namespace IOFunction_lib
             con.Close();
             return table;
         }
->>>>>>> Stashed changes
+
+        public static DataTable ConnectToDatabase_read_missing_stuff(string server, string port, string user, string password, string database, string query)
+        {
+            MySqlConnection con = new MySqlConnection($"datasource={server}; port={port}; username={user}; Password={password}; database={database};");
+            MySqlCommand myCommand = new MySqlCommand(query, con);
+            con.Open();
+            MySqlDataReader myReader;
+            DataTable table = new DataTable();
+            myReader = myCommand.ExecuteReader();
+            table.Load(myReader);
+            con.Close();
+            return table;
+        }
+
     }
 }
