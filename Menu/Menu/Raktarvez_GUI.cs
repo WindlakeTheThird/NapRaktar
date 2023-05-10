@@ -41,6 +41,16 @@ namespace Menu
             part_add_to_basket.Show();
             part_add_to_basket.FormClosed += sub_form_closeing;
         }
+
+        public void HianyzoListaz(object sender, EventArgs e)
+        {
+            this.Hide();
+            HianyzoAlkatreszListaz rakVezHianyzoAlkatreszek = new HianyzoAlkatreszListaz();
+            rakVezHianyzoAlkatreszek.Show();
+            rakVezHianyzoAlkatreszek.FormClosed += sub_form_closeing;
+        }
+
+
         public void sub_form_closeing(object sender, EventArgs e)
         {
             this.Show();

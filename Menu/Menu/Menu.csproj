@@ -207,6 +207,12 @@
     <Compile Include="Raktarvez_GUI.Designer.cs">
       <DependentUpon>Raktarvez_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="RakVezHianyzoAlkatreszek.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RakVezHianyzoAlkatreszek.Designer.cs">
+      <DependentUpon>RakVezHianyzoAlkatreszek.cs</DependentUpon>
+    </Compile>
     <Compile Include="RakVezRekeszhezAd.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </Compile>
     <EmbeddedResource Include="Raktarvez_GUI.resx">
       <DependentUpon>Raktarvez_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RakVezHianyzoAlkatreszek.resx">
+      <DependentUpon>RakVezHianyzoAlkatreszek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RakVezRekeszhezAd.resx">
       <DependentUpon>RakVezRekeszhezAd.cs</DependentUpon>
