@@ -25,17 +25,27 @@ namespace Menu
                     if (user[2] == "1")
                     {
                         this.Hide();
-                        worker = new Raktarvezeto(int.Parse(user[0]), user[1]);
+                        worker = new Raktarvezeto(Convert.ToInt32(user[0]), user[1]);
                         Raktarvez_GUI raktarvez_gui = new Raktarvez_GUI();
                         raktarvez_gui.Closed += (s, args) => this.Show();
                         raktarvez_gui.ShowDialog();
                         txtUser.Clear();
                         txtPw.Clear();
                     }
+                    if (user[2] == "2")
+                    {
+                        this.Hide();
+                        worker = new Raktaros(Convert.ToInt32(user[0]), user[1]);
+                        Raktaros_GUI raktaros_gui = new Raktaros_GUI();
+                        raktaros_gui.Closed += (s, args) => this.Show();
+                        raktaros_gui.ShowDialog();
+                        txtUser.Clear();
+                        txtPw.Clear();
+                    }
                     if (user[2] == "3")
                     {
                         this.Hide();
-                        worker = new Szakember(int.Parse(user[0]), user[1]);
+                        worker = new Szakember(Convert.ToInt32(user[0]),user[1]);
                         Szakember_GUI szakember_gui = new Szakember_GUI();
                         szakember_gui.Closed += (s, args) => this.Show();
                         szakember_gui.ShowDialog();

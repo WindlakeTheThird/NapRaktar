@@ -35,20 +35,22 @@ namespace Menu
             // lbPartList
             // 
             this.lbPartList.FormattingEnabled = true;
-            this.lbPartList.Location = new System.Drawing.Point(14, 2);
-            this.lbPartList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbPartList.ItemHeight = 16;
+            this.lbPartList.Location = new System.Drawing.Point(19, 2);
+            this.lbPartList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbPartList.Name = "lbPartList";
-            this.lbPartList.Size = new System.Drawing.Size(452, 264);
+            this.lbPartList.Size = new System.Drawing.Size(601, 324);
             this.lbPartList.TabIndex = 1;
             this.lbPartList.SelectedIndexChanged += new System.EventHandler(this.lbPartList_SelectedIndexChanged);
             // 
             // PartListUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbPartList);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PartListUC";
-            this.Size = new System.Drawing.Size(480, 285);
+            this.Size = new System.Drawing.Size(640, 351);
             this.ResumeLayout(false);
 
         }

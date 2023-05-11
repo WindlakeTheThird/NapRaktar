@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Menu</RootNamespace>
     <AssemblyName>Menu</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -145,6 +145,16 @@
     <Compile Include="AlkatreszRekeszhezAdasaForm.Designer.cs">
       <DependentUpon>AlkatreszRekeszhezAdasaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArkalkulacioesLezaras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArkalkulacioesLezaras.Designer.cs" />
+    <Compile Include="HianyzoAlkatresz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HianyzoAlkatresz.Designer.cs">
+      <DependentUpon>HianyzoAlkatresz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,13 +204,33 @@
     <Compile Include="ProjectAddUC.Designer.cs">
       <DependentUpon>ProjectAddUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProjectCalcEndUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectCalcEndUC.Designer.cs" />
     <Compile Include="ProjectListUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ProjectListUC.Designer.cs">
       <DependentUpon>ProjectListUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project_Part_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project_Part_List.Designer.cs">
+      <DependentUpon>Project_Part_List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaktarosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RaktarosForm.Designer.cs" />
+    <Compile Include="Raktaros_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raktaros_GUI.Designer.cs">
+      <DependentUpon>Raktaros_GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raktarvez_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +248,12 @@
     </Compile>
     <Compile Include="RakVezRekeszhezAd.Designer.cs">
       <DependentUpon>RakVezRekeszhezAd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rekesz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rekeszek.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="SetPrice.cs">
       <SubType>Form</SubType>
@@ -237,6 +273,9 @@
     <Compile Include="Szakember_GUI.Designer.cs">
       <DependentUpon>Szakember_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="utvonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="AlkatreszRekeszhezAdasaForm.resx">
       <DependentUpon>AlkatreszRekeszhezAdasaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +285,9 @@
     <Compile Include="SzakemberListPart.Designer.cs">
       <DependentUpon>SzakemberListPart.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HianyzoAlkatresz.resx">
+      <DependentUpon>HianyzoAlkatresz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +315,9 @@
     <EmbeddedResource Include="ProjectListUC.resx">
       <DependentUpon>ProjectListUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Project_Part_List.resx">
+      <DependentUpon>Project_Part_List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -283,11 +328,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RaktarosForm.resx">
+      <DependentUpon>RaktarosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raktaros_GUI.resx">
+      <DependentUpon>Raktaros_GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raktarvez_GUI.resx">
       <DependentUpon>Raktarvez_GUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RakVezHianyzoAlkatreszek.resx">
-      <DependentUpon>RakVezHianyzoAlkatreszek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RakVezRekeszhezAd.resx">
       <DependentUpon>RakVezRekeszhezAd.cs</DependentUpon>

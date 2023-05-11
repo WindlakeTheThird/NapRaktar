@@ -39,6 +39,7 @@ namespace Menu
             this.lbListPorjects.Name = "lbListPorjects";
             this.lbListPorjects.Size = new System.Drawing.Size(743, 251);
             this.lbListPorjects.TabIndex = 0;
+            this.lbListPorjects.SelectedIndexChanged += new System.EventHandler(this.lbListPorjects_SelectedIndexChanged);
             // 
             // ProjectListUC
             // 

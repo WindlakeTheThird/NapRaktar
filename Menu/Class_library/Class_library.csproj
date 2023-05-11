@@ -9,10 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Class_library</RootNamespace>
     <AssemblyName>Class_library</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,7 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Part.cs" />
+    <Compile Include="ProjectPart.cs" />
     <Compile Include="Project.cs" />
+    <Compile Include="Raktaros.cs" />
     <Compile Include="Raktarvezeto.cs" />
     <Compile Include="Szakember.cs" />
     <Compile Include="Worker.cs" />

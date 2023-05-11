@@ -1,4 +1,5 @@
-﻿namespace Menu
+﻿
+namespace Menu
 {
     partial class RakVezHianyzoAlkatreszek
     {
