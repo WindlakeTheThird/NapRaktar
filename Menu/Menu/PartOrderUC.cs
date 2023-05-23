@@ -12,7 +12,7 @@ namespace Menu
         }
         public void szakemberAlkatreszListazas()
         {
-            string query = $" SELECT tipus_id,tipus,ar,SUM(rekesz.mennyi)AS darabszam from alkatresz join rekesz on alkatresz.tipus_id = rekesz.alkatresz_id group by tipus";
+            string query = $" SELECT tipus_id,tipus,ar from alkatresz";
             dgwPartList.DataSource = Connector.ConnectToDatabase_read_parts_worker("127.0.0.1", "3306", "root", "toor", "napelem", query);
 
         }

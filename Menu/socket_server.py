@@ -46,16 +46,16 @@ def nonselect_db_command(sql):
         charset='utf8mb4',
         cursorclass=pymysql.cursors.DictCursor
     )
-    conn.autocommit(True)
+    #conn.autocommit(True)
     try:
         with conn.cursor() as cursor:
             
             #sql = "SELECT * FROM `alkatresz`"
-            cursor.execute(sql)       
+            cursor.execute(sql)    
+            conn.commit()   
     except:
         return "hiba a csatlakozás során"
     finally:
-        conn.commit()
         conn.close()
         return "done"
 
@@ -82,7 +82,7 @@ def start():
     while True:
         connect_to_socket,addr=s.accept()
         got_the_name = False
-        clienmsg = str(connect_to_socket.recv(4096))
+        clienmsg = str(connect_to_socket.recv(16000))
         sql=clienmsg.split('#')[1].rstrip(clienmsg.split('#')[1][-1])
         print(clienmsg.split('#')[0][-1])
         if(clienmsg.split('#')[0][-1] == '1'):

@@ -27,7 +27,7 @@ namespace Menu
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        /*private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -95,14 +95,10 @@ namespace Menu
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
+        }*/
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private ProjectListUC projectListUC1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        
     }
 }

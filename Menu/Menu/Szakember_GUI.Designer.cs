@@ -33,6 +33,7 @@ namespace Menu
             this.btnUjProjekt = new System.Windows.Forms.Button();
             this.btnKoltseg = new System.Windows.Forms.Button();
             this.btnPartToProject = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button3
@@ -44,6 +45,7 @@ namespace Menu
             this.button3.TabIndex = 3;
             this.button3.Text = "Kilépés";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnUjProjekt
             // 
@@ -75,11 +77,22 @@ namespace Menu
             this.btnPartToProject.UseVisualStyleBackColor = true;
             this.btnPartToProject.Click += new System.EventHandler(this.AlkatreszProjektOpen);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(72, 208);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 48);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Árkalkuláció, projekt lezárás és helyszín felmérés";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Szakember_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 312);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPartToProject);
             this.Controls.Add(this.btnKoltseg);
             this.Controls.Add(this.btnUjProjekt);
@@ -98,5 +111,6 @@ namespace Menu
         private System.Windows.Forms.Button btnUjProjekt;
         private System.Windows.Forms.Button btnKoltseg;
         private System.Windows.Forms.Button btnPartToProject;
+        private System.Windows.Forms.Button button1;
     }
 }

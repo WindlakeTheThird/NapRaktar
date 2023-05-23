@@ -48,5 +48,17 @@ namespace Menu
             this.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ArkalkulacioesLezaras ark = new ArkalkulacioesLezaras();
+            ark.Show();
+            ark.FormClosed += sub_form_closeing;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

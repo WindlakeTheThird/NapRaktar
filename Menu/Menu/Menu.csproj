@@ -285,6 +285,9 @@
     <Compile Include="SzakemberListPart.Designer.cs">
       <DependentUpon>SzakemberListPart.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ArkalkulacioesLezaras.resx">
+      <DependentUpon>ArkalkulacioesLezaras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HianyzoAlkatresz.resx">
       <DependentUpon>HianyzoAlkatresz.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectAddUC.resx">
       <DependentUpon>ProjectAddUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectCalcEndUC.resx">
+      <DependentUpon>ProjectCalcEndUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectListUC.resx">
       <DependentUpon>ProjectListUC.cs</DependentUpon>

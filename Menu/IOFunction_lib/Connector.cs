@@ -36,7 +36,7 @@ namespace IOFunction_lib
                 clientSocket.Send(data);
 
                 // Receive the response from the server.
-                data = new byte[1024];
+                data = new byte[16000];
                 var bytesReceived = clientSocket.Receive(data);
                 response = Encoding.UTF8.GetString(data, 0, bytesReceived);
 
@@ -52,6 +52,9 @@ namespace IOFunction_lib
             }
             return response;
         }
+
+        
+
         public static string Encode(string plaintext)
         {
             try
@@ -363,7 +366,6 @@ namespace IOFunction_lib
 
         public static int ConnectToDatabase_read_rek_1(string server, string port, string user, string password, string database, string query)
         {
-            int van = -1;
             /*
             string MyConnection2 = $"datasource={server}; port={port}; username={user}; Password={password}; database={database};";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
@@ -554,17 +556,15 @@ namespace IOFunction_lib
                 string response = ClientSocket_Connector($"1#{query}");
                 DataTable dt = new DataTable();
                 dt.Clear();
-                dt.Columns.Add("Tipus_ID");
+                dt.Columns.Add("Tipus id");
                 dt.Columns.Add("Tipus");
                 dt.Columns.Add("Ár");
-                dt.Columns.Add("Darabszám");
                 foreach (var row in response.Split('#'))
                 {
                     DataRow _drow = dt.NewRow();
-                    _drow["Tipus_ID"] = row.Split(',')[0].Split(':')[1].Split('"')[1];
+                    _drow["Tipus id"] = row.Split(',')[0].Split(':')[1].Split('"')[1];
                     _drow["Tipus"] = row.Split(',')[1].Split(':')[1].Split('"')[1];
                     _drow["Ár"] = row.Split(',')[2].Split(':')[1].Split('"')[1];
-                    _drow["Darabszám"] = row.Split(',')[3].Split(':')[1].Split('"')[1];
                     dt.Rows.Add(_drow);
                 }
 
@@ -593,6 +593,8 @@ namespace IOFunction_lib
             con.Close();
             */
             string response = ClientSocket_Connector($"1#{query}");
+            if (response.Equals("hibás felhasználónév vagy jelszó"))
+                return 0;
             foreach (var row in response.Split('#'))
             {
                 sum+= Convert.ToDouble(row.Split(',')[0].Split(':')[1].Split('"')[1])* Convert.ToDouble(row.Split(',')[1].Split(':')[1].Split('"')[1]);
@@ -615,6 +617,8 @@ namespace IOFunction_lib
             con.Close();
             */
             string response = ClientSocket_Connector($"1#{query}");
+            if (response.Equals("hibás felhasználónév vagy jelszó"))
+                return 0;
             foreach (var row in response.Split('#'))
             {
                 ber = Convert.ToDouble(row.Split(',')[0].Split(':')[1].Split('"')[1]);
@@ -679,8 +683,33 @@ namespace IOFunction_lib
             }
             return null;*/
 
-            var response = ClientSocket_Connector($"1#Select * from projekt where allapot = 3");
+            var response = ClientSocket_Connector($"1#Select * from projekt where allapot = 1 or allapot = 2 or allapot = 3");
             if (response.Length == 0 || response =="hibás felhasználónév vagy jelszó")
+            {
+                return null;
+            }
+            var seged = response.Split('#');
+            List<Project> proj_lista = new List<Project>();
+            foreach (var resz in seged)
+            {
+                var darabok = resz.Split(',');
+                int id = Convert.ToInt32(darabok[0].Split(':')[1].Split('"')[1]);
+                string proj_name = darabok[1].Split(':')[1].Split('"')[1];
+                int szakember_id = Convert.ToInt32(darabok[2].Split(':')[1].Split('"')[1]);
+                int allapot = Convert.ToInt32(darabok[3].Split(':')[1].Split('"')[1]);
+                int koltseg = Convert.ToInt32(darabok[4].Split(':')[1].Split('"')[1]);
+                string kivitido = darabok[5].Split(':')[1].Split('"')[1];
+                string hely = darabok[6].Split(':')[1].Split('"')[1];
+                string leiras = darabok[7].Split(':')[1].Split('"')[1];
+                string elerhetoseg = darabok[8].Split(':')[1].Split('"')[1];
+                proj_lista.Add(new Project(id, proj_name, szakember_id, allapot, koltseg, kivitido, hely, leiras, elerhetoseg));
+            }
+            return proj_lista;
+        }
+        public static List<Project> ConnectToDatabase_list_projects3(string v1, string v2, string v3, string v4, string v5)
+        {
+            var response = ClientSocket_Connector($"1#Select * from projekt where allapot = 3");
+            if (response.Length == 0 || response == "hibás felhasználónév vagy jelszó")
             {
                 return null;
             }
@@ -738,7 +767,7 @@ namespace IOFunction_lib
                 int sor = Convert.ToInt32(darabok[1].Split(':')[1].Split('"')[1]);
                 int oszlop = Convert.ToInt32(darabok[2].Split(':')[1].Split('"')[1]);
                 int szint = Convert.ToInt32(darabok[3].Split(':')[1].Split('"')[1]);
-                int mennyiseg=Convert.ToInt32(darabok[0].Split(':')[1].Split('"')[1]);
+                int mennyiseg=Convert.ToInt32(darabok[4].Split(':')[1].Split('"')[1]);
                 lista.Add(new ProjectPart(sor, oszlop, szint, mennyiseg));
             }
             resz_lista.Add(proj_id, lista);
@@ -749,7 +778,7 @@ namespace IOFunction_lib
 
             try
             {
-                string response = ClientSocket_Connector("1#select * from projekt where allapot <5");
+                string response = ClientSocket_Connector("1#select * from projekt where allapot =3");
                 DataTable dt = new DataTable();
                 dt.Clear();
                 dt.Columns.Add("Projekt_ID");
@@ -783,6 +812,41 @@ namespace IOFunction_lib
                 return new DataTable();
             }
 
+        }
+        //új
+        public static int ConnectToDatabase_list_rendid(int id)
+        {
+            var response = ClientSocket_Connector($"1#Select count(*) from rendeles where projekt_id={id} and rendeles_allapot=0").Split(':')[1].Split('"')[1];
+            if (response.Contains("hiba"))
+            {
+                return -1;
+            }
+            return Convert.ToInt32(response);
+        }
+        public static DataTable ConnectToDatabase_rekesz_listazas(string query)
+        {
+            string response = ClientSocket_Connector($"1#{query}");
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Sor");
+            dt.Columns.Add("Oszlop");
+            dt.Columns.Add("Szint");
+            dt.Columns.Add("Alkatrész_ID");
+            dt.Columns.Add("Mennyiség");
+            dt.Columns.Add("Projekt_ID");
+            foreach (var row in response.Split('#'))
+            {
+                DataRow _drow = dt.NewRow();
+                _drow["Sor"] = row.Split(',')[0].Split(':')[1].Split('"')[1];
+                _drow["Oszlop"] = row.Split(',')[1].Split(':')[1].Split('"')[1];
+                _drow["Szint"] = row.Split(',')[2].Split(':')[1].Split('"')[1];
+                _drow["Alkatrész_ID"] = row.Split(',')[3].Split(':')[1].Split('"')[1];
+                _drow["Mennyiség"] = row.Split(',')[4].Split(':')[1].Split('"')[1];
+                _drow["Projekt_ID"] = row.Split(',')[5].Split(':')[1].Split('"')[1];
+                dt.Rows.Add(_drow);
+            }
+
+            return dt;
         }
     }
 }   

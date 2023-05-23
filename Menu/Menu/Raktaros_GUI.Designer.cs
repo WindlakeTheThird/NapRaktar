@@ -36,9 +36,10 @@ namespace Menu
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(119, 248);
+            this.btnQuit.Location = new System.Drawing.Point(89, 202);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnQuit.Size = new System.Drawing.Size(56, 19);
             this.btnQuit.TabIndex = 0;
             this.btnQuit.Text = "Kilépés";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@ namespace Menu
             // 
             // btnStartProject
             // 
-            this.btnStartProject.Location = new System.Drawing.Point(101, 69);
+            this.btnStartProject.Location = new System.Drawing.Point(76, 56);
+            this.btnStartProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStartProject.Name = "btnStartProject";
-            this.btnStartProject.Size = new System.Drawing.Size(124, 23);
+            this.btnStartProject.Size = new System.Drawing.Size(93, 19);
             this.btnStartProject.TabIndex = 1;
             this.btnStartProject.Text = "Projekt Indítása";
             this.btnStartProject.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@ namespace Menu
             // 
             // btnProjectPartList
             // 
-            this.btnProjectPartList.Location = new System.Drawing.Point(24, 108);
+            this.btnProjectPartList.Location = new System.Drawing.Point(18, 88);
+            this.btnProjectPartList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProjectPartList.Name = "btnProjectPartList";
-            this.btnProjectPartList.Size = new System.Drawing.Size(293, 23);
+            this.btnProjectPartList.Size = new System.Drawing.Size(220, 38);
             this.btnProjectPartList.TabIndex = 2;
             this.btnProjectPartList.Text = "Projekthez tartozó részek helyének listázása";
             this.btnProjectPartList.UseVisualStyleBackColor = true;
@@ -66,12 +69,13 @@ namespace Menu
             // 
             // Raktaros_GUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 320);
+            this.ClientSize = new System.Drawing.Size(247, 260);
             this.Controls.Add(this.btnProjectPartList);
             this.Controls.Add(this.btnStartProject);
             this.Controls.Add(this.btnQuit);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Raktaros_GUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raktaros_GUI";

@@ -16,7 +16,7 @@ namespace Menu
         }
         public void OrderPart(int alk_id, int mennyiseg, int projekt_id)
         {
-            string query = "Select count(*) from napelem.rekesz where alkatresz_id=" + alk_id;
+            string query = "Select count(*) from napelem.rekesz where alkatresz_id=" + alk_id+" and project_id=0";
             int s = 0, mkell = mennyiseg, mkellv = mennyiseg;
             int van = Connector.ConnectToDatabase_read_rek_1("127.0.0.1", "3306", "root", "toor", "napelem", query);
             if (van == -1)

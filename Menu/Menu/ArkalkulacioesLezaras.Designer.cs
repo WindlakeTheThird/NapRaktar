@@ -27,7 +27,7 @@ namespace Menu
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        /*private void InitializeComponent()
         {
             this.projectCalcEndUC1 = new Menu.ProjectCalcEndUC();
             this.SuspendLayout();
@@ -49,10 +49,9 @@ namespace Menu
             this.Text = "ArkalkulacioesLezaras";
             this.ResumeLayout(false);
 
-        }
+        }*/
 
         #endregion
 
-        private ProjectCalcEndUC projectCalcEndUC1;
     }
 }
