@@ -21,7 +21,6 @@ namespace Menu
         private void button1_Click(object sender, EventArgs e)
         {
             arcalc(projectListUC1.ReturnProjectId());
-            MessageBox.Show("A projekt még nem áll készen!", "Hiba", MessageBoxButtons.OK);
             
         }
 
@@ -57,7 +56,7 @@ namespace Menu
             if (projectListUC1.ReturnProjectAllapot() == 2)
             {
                 double sum = 0;
-                string query = $" SELECT rekesz.mennyi,alkatresz.ar from alkatresz join rekesz on alkatresz.tipus_id = rekesz.alkatresz_id where rekesz.project_id={id}";
+                string query = $"select alkatresz.ar, sum(rendeles.mennyiseg)from rendeles join alkatresz on rendeles.alkatresz = alkatresz.tipus_id where rendeles.projekt_id = {id} GROUP BY rendeles.alkatresz";
                 sum += Connector.ConnectToDatabase_read_alkatresz_arak("127.0.0.1", "3306", "root", "toor", "napelem", query);
                 query = $" SELECT koltseg from projekt  where id={id}";
                 sum += Connector.ConnectToDatabase_read_projekt_munka_ber("127.0.0.1", "3306", "root", "toor", "napelem", query);
@@ -126,6 +125,7 @@ namespace Menu
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.projectListUC1 = new Menu.ProjectListUC();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -168,7 +168,7 @@ namespace Menu
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(653, 302);
+            this.button4.Location = new System.Drawing.Point(44, 328);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 19);
             this.button4.TabIndex = 5;
@@ -183,10 +183,21 @@ namespace Menu
             this.projectListUC1.Size = new System.Drawing.Size(789, 292);
             this.projectListUC1.TabIndex = 2;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(188, 328);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(141, 19);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Alkatrészek megérkeztek";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // ProjectCalcEndUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -194,7 +205,7 @@ namespace Menu
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "ProjectCalcEndUC";
-            this.Size = new System.Drawing.Size(887, 350);
+            this.Size = new System.Drawing.Size(887, 378);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +217,7 @@ namespace Menu
         private ProjectListUC projectListUC1;
         private System.Windows.Forms.Button button2;
         private Button button4;
+        private Button button5;
         private System.Windows.Forms.Button button3;
 
         private bool vare()
@@ -222,6 +234,12 @@ namespace Menu
             }
         }
 
-        
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int id = projectListUC1.ReturnProjectId();
+            string query = $"update rendeles set rendeles_allapot=1 where projekt_id={id}";
+            Connector.ConnectToDatabase_update("127.0.0.1", "3306", "root", "toor", "napelem", query);
+            MessageBox.Show("A projekt nem \"wait\" állapotban van még!", "Hiba", MessageBoxButtons.OK);
+        }
     }
 }
