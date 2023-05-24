@@ -778,7 +778,7 @@ namespace IOFunction_lib
 
             try
             {
-                string response = ClientSocket_Connector("1#select * from projekt where allapot =3");
+                string response = ClientSocket_Connector("1#select * from projekt where allapot =4");
                 DataTable dt = new DataTable();
                 dt.Clear();
                 dt.Columns.Add("Projekt_ID");
